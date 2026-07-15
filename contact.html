@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IMA Academy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0c0c0c; color: #ffffff; line-height: 1.6; }
+        
+        /* Bara de navigare identică pe toate paginile */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: #141414; border-bottom: 2px solid #d4af37; box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 48px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 24px; font-weight: bold; color: #d4af37; letter-spacing: 3px; white-space: nowrap; }
+        .nav-container { display: flex; align-items: center; gap: 40px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; padding: 8px 16px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease; }
+        nav ul li a:hover, nav .active { color: #d4af37; border-color: rgba(212, 175, 55, 0.4); box-shadow: 0 0 12px rgba(212, 175, 55, 0.25); }
+        .btn-join-top { display: inline-block; padding: 10px 24px; background-color: #d4af37; color: #0c0c0c; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 1.5px; border: 2px solid #d4af37; border-radius: 4px; transition: all 0.3s ease; }
+        .btn-join-top:hover { background-color: transparent; color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+
+        /* Conținut specific paginii CONTACT */
+        .contact-container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
+        .contact-title { font-size: 36px; color: #d4af37; margin-bottom: 30px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-form { background-color: #141414; padding: 40px; border-radius: 6px; border: 1px solid #222222; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+        .form-group { margin-bottom: 25px; display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { color: #d4af37; font-weight: 600; font-size: 13px; letter-spacing: 1px; }
+        .form-group input, .form-group textarea { background-color: #0c0c0c; border: 1px solid #333333; color: #ffffff; padding: 14px; border-radius: 4px; font-size: 16px; outline: none; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #d4af37; }
+        .btn-submit { background-color: #d4af37; color: #0c0c0c; border: none; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; width: 100%; letter-spacing: 1px; }
+        .btn-submit:hover { box-shadow: 0 0 18px rgba(212, 175, 55, 0.6); transform: translateY(-2px); }
+
+        @media (max-width: 950px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .logo-container { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 15px; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav ul li a { padding: 6px 12px; font-size: 13px; }
+            .btn-join-top { width: 80%; text-align: center; }
+            .contact-container { margin: 30px auto; }
+            .contact-form { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="IMA Logo" class="logo-img">
+            <div class="logo-text">IMA ACADEMY</div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="leadership.html">LEADERSHIP</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="contact.html" class="active">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn-join-top">JOIN ACADEMY</a>
+        </div>
+    </header>
+
+<header>
+    
+    <!-- OFFICIAL REGISTRATION -->
+
+<section class="official-registration">
+
+    <div class="registration-container">
+
+        <h2>Official Registration Information</h2>
+
+        <div class="registration-line"></div>
+
+        <div class="registration-item">
+            <strong>Official Name (English)</strong>
+            <span>International Masterchef Academy</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Official Name (Romanian)</strong>
+            <span>Asociația Internațională a Maeștrilor Bucătari</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Registration Number</strong>
+            <span>Y-10006500</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Fiscal Identification Number (C.I.F.)</strong>
+            <span>52581860</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Issued By</strong>
+            <span>
+                Government of Romania<br>
+                Regional Directorate General of Public Finance Bucharest<br>
+                Bucharest County Public Finance Administration<br>
+                Bragadiru Local Fiscal Office
+            </span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Official Phone</strong>
+            <span>+40 763 233 613</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Official E-mail</strong>
+            <span>ima.romania.office@gmail.com</span>
+        </div>
+
+        <div class="registration-item">
+            <strong>Official Website</strong>
+            <span>www.internationalmasterchef.com</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OFFICIAL MEMBERSHIP APPLICATION -->
+
+<section class="membership-form">
+
+    <div class="separator-section">
+        <div class="separator-ornament">✦ ✦ ✦</div>
+        <h2>Official Membership Application</h2>
+        <div class="gold-divider"></div>
+    </div>
+
+    <p class="form-intro">
+        Complete the form below and our team will contact you regarding your membership application.
+    </p>
+
+    <form>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" placeholder="Enter your country">
+        </div>
+
+        <div class="form-group">
+            <label>Organization / Company</label>
+            <input type="text" placeholder="Organization or Company">
+        </div>
+
+        <div class="form-group">
+            <label>Position / Profession</label>
+            <input type="text" placeholder="Your position">
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+            <label>Membership Category</label>
+
+            <select>
+
+                <option>Student</option>
+                <option>Junior</option>
+                <option>Associate</option>
+                <option>Senior</option>
+                <option>Masterchef</option>
+                <option>International Judge</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea rows="6" placeholder="Write your message..."></textarea>
+        </div>
+
+        <div class="form-checkbox">
+            <label>
+                <input type="checkbox">
+                I have read and accept the Membership Terms & Privacy Policy.
+            </label>
+        </div>
+
+        <button type="submit" class="btn-submit">
+            SUBMIT APPLICATION
+        </button>
+
+    </form>
+
+</section>
+
+
+
+

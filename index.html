@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA - International Masterchef Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0c0c0c;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- BARA DE NAVIGARE PREMIUM --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #090909;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, nav .active {
+            color: #d4af37;
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-join-top {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #d4af37;
+            color: #0c0c0c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-join-top:hover {
+            background-color: transparent;
+            color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- REPARAT: CORECTAREA PROPORȚIILOR BANNERULUI --- */
+        .hero-banner {
+            width: 100%;
+            height: auto; /* Permite imaginii să își păstreze formatele corecte pe monitor */
+            position: relative;
+            background-color: #0c0c0c;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto; /* Previne tăierea imaginii în partea de jos */
+            display: block;
+        }
+
+        /* Efectul de umbră fină la baza imaginii */
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(transparent, #0c0c0c);
+            pointer-events: none;
+        }
+
+        /* --- SECȚIUNEA INTRODUCERE FILOZOFIE (MUTATĂ MAI JOS) --- */
+        .intro-section {
+            max-width: 1200px;
+            margin: 40px auto 80px auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: #cccccc;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto 60px auto;
+        }
+
+        /* --- GRILA PILONILOR DE EXCELENȚĂ --- */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background-color: #141414;
+            padding: 40px 30px;
+            border-radius: 6px;
+            border: 1px solid #222222;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .pillar-icon {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .pillar-card h3 {
+            font-size: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .pillar-card p {
+            font-size: 15px;
+            color: #999999;
+            line-height: 1.6;
+        }
+
+        /* --- RESPONSIVITATE PENTRU TELEFOANE --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px 5%;
+            }
+
+            .logo-container { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 15px; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav ul li a { padding: 6px 12px; font-size: 13px; }
+            .btn-join-top { width: 80%; text-align: center; }
+
+            /* Pe telefon îi dăm o înălțime minimă stabilă ca să nu devină o dungă subțire */
+            .hero-banner {
+                height: 45vh;
+                overflow: hidden;
+            }
+            .hero-banner img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .intro-section { margin: 30px auto; padding: 0 20px; }
+            .intro-section h2 { font-size: 24px; }
+            .intro-section p { font-size: 16px; margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="IMA Logo" class="logo-img">
+            <div class="logo-text">IMA ACADEMY</div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="leadership.html">LEADERSHIP</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn-join-top">JOIN ACADEMY</a>
+        </div>
+    </header>
+
+    <!-- Imaginea ta se va afișa acum complet, de sus până jos -->
+    <div class="hero-banner">
+        <img src="home-banner.jpg" alt="International Masterchef Academy Presentation">
+    </div>
+
+    <!-- Acest text se va așeza curat, abia DUPĂ ce se termină imaginea -->
+    <section class="intro-section">
+        <h2>The Art of Culinary Mastery</h2>
+        <p>At IMA, we believe that gastronomy is more than just combining ingredients—it is a language of precision, culture, and innovation. Our programs are designed to challenge boundaries and cultivate elite expertise for passionate professionals worldwide.</p>
+
+        <div class="pillars-grid">
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">✦</div>
+                <h3>Avant-Garde Techniques</h3>
+                <p>Explore modern textures, molecular gastronomy, and innovative food design that define the future of fine dining.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">⚜</div>
+                <h3>Heritage & Tradition</h3>
+                <p>Master the foundational classic international techniques, honoring culinary history with absolute technical discipline.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">♔</div>
+                <h3>Elite Mentorship</h3>
+                <p>Learn directly through elite guidance tailored to unlock your full potential and establish your professional authority.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

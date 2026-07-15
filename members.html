@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an IMA Member</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- BARA DE NAVIGARE PREMIUM --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #090909;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, nav .active {
+            color: #d4af37;
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-join-top {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #d4af37;
+            color: #0c0c0c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-join-top:hover {
+            background-color: transparent;
+            color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- INTRODUCERE --- */
+        .members-intro-box {
+            max-width: 950px;
+            margin: 80px auto 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .members-title {
+            font-family: Georgia, serif;
+            font-size: 44px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .members-subtitle {
+            font-size: 17px;
+            color: #b5b5b5;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* --- TITLURI DE SECȚIUNE --- */
+        .separator-section {
+            text-align: center;
+            margin: 80px auto 50px auto;
+            max-width: 600px;
+        }
+
+        .separator-ornament {
+            font-size: 16px;
+            color: #d4af37;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .separator-section h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            color: #d4af37;
+            letter-spacing: 3px;
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .gold-divider {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6), transparent);
+            margin: 0 auto;
+        }
+
+        /* --- GRILĂ COMPACTĂ: FIINE FINISATĂ PE 2 COLOANE --- */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Pune fix 2 coloane egale, una lângă alta */
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .course-card {
+            background-color: #0c0c0c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .masterchef-track {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .masterchef-track:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.03);
+        }
+
+        .judge-track {
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .judge-track:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
+        }
+
+        /* Caseta pozei din interiorul cardului */
+        .course-img-box {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            background-color: #111111;
+        }
+
+        .course-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .course-info-content {
+            padding: 40px 30px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card h3 {
+            font-family: Georgia, serif;
+            font-size: 26px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .masterchef-track h3 { color: #ffffff; }
+        .judge-track h3 { color: #d4af37; }
+
+        .course-card p {
+            font-size: 15px;
+            color: #999999;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .badge-info {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-top: auto;
+        }
+
+        .masterchef-track .badge-info {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .judge-track .badge-info {
+            background-color: rgba(212, 175, 55, 0.05);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        /* --- FOOTER BUTON --- */
+        .members-footer-info {
+            max-width: 800px;
+            margin: 40px auto 120px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .btn-apply {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-apply:hover {
+            color: #d4af37;
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* --- RESPONSIVITATE TELEFON --- */
+        @media (max-width: 850px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .logo-container { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 15px; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav ul li a { padding: 6px 12px; font-size: 12px; }
+            .btn-join-top { width: 80%; text-align: center; }
+
+            .members-intro-box { margin: 40px auto 30px auto; }
+            .members-title { font-size: 32px; }
+            .members-subtitle { font-size: 15px; }
+            .separator-section h2 { font-size: 24px; }
+            
+            .courses-grid { grid-template-columns: 1fr; gap: 35px; }
+            .course-img-box { height: 260px; }
+            .btn-apply { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meniu principal universal -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="IMA Logo" class="logo-img">
+            <div class="logo-text">IMA ACADEMY</div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="leadership.html">LEADERSHIP</a></li>
+                    <li><a href="members.html" class="active">MEMBERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn-join-top">JOIN ACADEMY</a>
+        </div>
+    </header>
+
+    <!-- Titlul și subtitlul tău oficial -->
+    <section class="members-intro-box">
+        <h1 class="members-title">Become an IMA Member</h1>
+        <p class="members-subtitle">
+
+Join the International Masterchef Academy and become part of a global community of culinary professionals dedicated to excellence, education, certification and international collaboration.
+</p>
+</section>
+
+<!-- COURSES -->
+<section class="separator-section">
+    <div class="separator-ornament">✦ ✦ ✦</div>
+    <h2>Professional Courses</h2>
+    <div class="gold-divider"></div>
+</section>
+
+<div class="courses-grid">
+
+    <!-- MASTERCHEF -->
+    <div class="course-card masterchef-track">
+
+        <div class="course-img-box">
+            <img src="track-masterchef.jpg" alt="Professional Masterchef Course">
+        </div>
+
+        <div class="course-info-content">
+            <h3>Professional Masterchef Course</h3>
+
+            <p>
+                Develop advanced culinary skills through professional
+                training designed by the International Masterchef Academy.
+                Learn modern techniques, international cuisine and kitchen
+                leadership.
+            </p>
+
+            <span class="badge-info">
+                Official IMA Program
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- JUDGE -->
+    <div class="course-card judge-track">
+
+        <div class="course-img-box">
+            <img src="track-judge.jpg" alt="International Judge Course">
+        </div>
+
+        <div class="course-info-content">
+
+            <h3>International Judge Course</h3>
+
+            <p>
+                Learn professional judging standards for culinary competitions,
+                evaluation methods, scoring systems and international protocols.
+            </p>
+
+            <span class="badge-info">
+                Official Judge Certification
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- OFFICIAL MEMBERSHIP KIT -->
+
+<section class="separator-section">
+    <div class="separator-ornament">✦ ✦ ✦</div>
+    <h2>Official Membership Kit</h2>
+    <div class="gold-divider"></div>
+</section>
+
+<div style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
+    <img src="official-membership-kit.jpg"
+         alt="Official Membership Kit"
+         style="width:100%; display:block; border-radius:8px;">
+</div>
+
+<!-- EXCLUSIVE MEMBERSHIP BENEFITS -->
+
+<section class="separator-section">
+    <div class="separator-ornament">✦ ✦ ✦</div>
+    <h2>Exclusive Membership Benefits</h2>
+    <div class="gold-divider"></div>
+</section>
+
+<div style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
+    <img src="official-membership-benefits.jpg"
+         alt="Exclusive Membership Benefits"
+         style="width:100%; display:block; border-radius:8px;">
+</div>
+
+<!-- OFFICIAL MEMBERSHIP CARDS & DIPLOMAS -->
+
+<section class="separator-section">
+    <div class="separator-ornament">✦ ✦ ✦</div>
+    <h2>Official Membership Cards & Diplomas</h2>
+    <div class="gold-divider"></div>
+</section>
+
+<div style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
+    <img src="official-membership-cards.jpg"
+         alt="Official Membership Cards & Diplomas"
+         style="width:100%; display:block; border-radius:8px;">
+</div>
+
+<!-- MEMBERSHIP CATEGORIES & ANNUAL FEES -->
+
+<section class="separator-section">
+    <div class="separator-ornament">✦ ✦ ✦</div>
+    <h2>Membership Categories & Annual Fees</h2>
+    <div class="gold-divider"></div>
+</section>
+
+<div style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
+    <img src="official-membership-categories.jpg"
+         alt="Membership Categories & Annual Fees"
+         style="width:100%; display:block; border-radius:8px;">
+</div>
+
+</section>
+
+<div class="members-footer-info">
+
+    <a href="contact.html" class="btn-apply">
+        APPLY FOR MEMBERSHIP
+    </a>
+
+</div>
+
+</body>
+</html>
+
+
+

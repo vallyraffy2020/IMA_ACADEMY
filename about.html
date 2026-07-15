@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IMA Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- BARA DE NAVIGARE PREMIUM --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #090909;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, nav .active {
+            color: #d4af37;
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-join-top {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #d4af37;
+            color: #0c0c0c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-join-top:hover {
+            background-color: transparent;
+            color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- CONTAINER IMAGINE CRONOLOGIE --- */
+        .about-main-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
+            background-color: #050505;
+        }
+
+        .about-graphic-box {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.05);
+        }
+
+        .about-graphic-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- SECȚIUNEA TEXT SCURT ȘI RESPONSIV --- */
+        .story-text-box {
+            max-width: 900px;
+            margin: 50px auto 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .story-p {
+            font-size: 22px;
+            color: #eeeeee;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .story-p span {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        /* --- CARDIURI PREMIUM ACTUALIZATE --- */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1260px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .value-card {
+            background-color: #111111;
+            padding: 40px 25px;
+            border-radius: 6px;
+            border: 1px solid #222222;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .value-card h3 {
+            font-size: 16px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            font-size: 15px;
+            color: #aaaaaa;
+            font-weight: 400;
+        }
+
+        /* --- ZONA BUTON CATALOG --- */
+        .about-footer-info {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .btn-catalog {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-catalog:hover {
+            color: #d4af37;
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* --- RESPONSIVITATE --- */
+        @media (max-width: 950px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .logo-container { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 15px; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav ul li a { padding: 6px 12px; font-size: 13px; }
+            .btn-join-top { width: 80%; text-align: center; }
+
+            .about-main-container { margin: 15px auto; padding: 0 10px; }
+            
+            .about-graphic-box {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .about-graphic-box img { width: 900px; max-width: none; }
+
+            .story-text-box { margin: 30px auto; }
+            .story-p { font-size: 17px; }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .value-card { padding: 30px 20px; }
+            .btn-catalog { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meniu Identic -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="IMA Logo" class="logo-img">
+            <div class="logo-text">IMA ACADEMY</div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html" class="active">ABOUT</a></li>
+                    <li><a href="leadership.html">LEADERSHIP</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn-join-top">JOIN ACADEMY</a>
+        </div>
+    </header>
+
+    <!-- Imaginea Cronologiei -->
+    <div class="about-main-container">
+        <div class="about-graphic-box">
+            <img src="about-banner.jpg" alt="IMA International Masterchef Academy History Mission and Vision">
+        </div>
+    </div>
+
+    <!-- Prezentarea principală scurtă -->
+    <section class="story-text-box">
+        <p class="story-p">
+            <span>IMA</span> brings together chefs from around the world through education, competitions and professional excellence.
+        </p>
+    </section>
+
+    <!-- Cele 3 Carduri Minimaliste și Curate -->
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>Avant-Garde Techniques</h3>
+            <p>Modern culinary innovation.</p>
+        </div>
+        <div class="value-card">
+            <h3>Heritage & Tradition</h3>
+            <p>Preserving authentic gastronomy.</p>
+        </div>
+        <div class="value-card">
+            <h3>Elite Mentorship</h3>
+            <p>Learn from world-class professionals.</p>
+        </div>
+    </div>
+
+    <!-- Buton Solicitare Catalog -->
+    <div class="about-footer-info">
+        <a href="contact.html" class="btn-catalog">REQUEST OFFICIAL CATALOG</a>
+    </div>
+
+</body>
+</html>

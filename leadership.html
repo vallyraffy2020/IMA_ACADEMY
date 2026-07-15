@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership - IMA Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #030303; /* Negru profund asortat cu fundalul graficilor tale */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- BARA DE NAVIGARE PREMIUM --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #090909;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, nav .active {
+            color: #d4af37;
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-join-top {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #d4af37;
+            color: #0c0c0c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-join-top:hover {
+            background-color: transparent;
+            color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- CONTAINER MARE PORTRET PREȘEDINTE --- */
+        .leader-main-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 40px auto 30px auto;
+            padding: 0 20px;
+        }
+
+        .leader-graphic-box {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .leader-graphic-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- TITLURI IMPERIALE DE SECȚIUNE --- */
+        .separator-section {
+            text-align: center;
+            margin: 80px auto 50px auto;
+            max-width: 600px;
+        }
+
+        .separator-ornament {
+            font-size: 18px;
+            color: #d4af37;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .separator-section h2 {
+            font-size: 28px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-divider {
+            width: 180px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6), transparent);
+            margin: 0 auto;
+        }
+
+        /* --- GRILĂ AFISARE MEMBRII FONDATORI (FARA LIMITARI) --- */
+        .founders-display-section {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px;
+            justify-items: center;
+        }
+
+        .founder-poster-card {
+            width: 100%; 
+            height: auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+
+        .founder-poster-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+        }
+
+        .founder-poster-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- GRILĂ AFISARE BIROU EXECUTIV (FORMAT MARE 3 PE LINIE) --- */
+        .executive-display-section {
+            width: 100%;
+            max-width: 1300px; /* Lățime extinsă pentru postere mari și impunătoare */
+            margin: 0 auto 100px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 elemente mari pe rând */
+            gap: 40px; 
+            justify-items: center;
+            align-items: center;
+        }
+
+        .executive-poster-card {
+            width: 100%; /* Folosește complet spațiul nativ fără limitări stricte de pixeli */
+            height: auto;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+
+        .executive-poster-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .executive-poster-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- RESPONSIVITATE PENTRU TELEFON --- */
+        @media (max-width: 850px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .logo-container { justify-content: center; }
+            .nav-container { flex-direction: column; gap: 15px; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .btn-join-top { width: 80%; text-align: center; }
+
+            .leader-main-container { margin: 15px auto; padding: 0 10px; }
+            .leader-graphic-box { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .leader-graphic-box img { width: 900px; max-width: none; }
+
+            .separator-section h2 { font-size: 20px; letter-spacing: 3px; }
+            
+            .founders-display-section { grid-template-columns: 1fr; gap: 40px; padding: 0 15px; }
+            .executive-display-section { grid-template-columns: 1fr; gap: 40px; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meniu principal universal -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="IMA Logo" class="logo-img">
+            <div class="logo-text">IMA ACADEMY</div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="leadership.html" class="active">LEADERSHIP</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn-join-top">JOIN ACADEMY</a>
+        </div>
+    </header>
+
+    <!-- Bannerul Tău Oficial ca Președinte -->
+    <div class="leader-main-container">
+        <div class="leader-graphic-box">
+            <img src="leadership-banner.jpg" alt="IMA President Valentin Rafael - Leadership and Excellence">
+        </div>
+    </div>
+
+    <!-- Secțiunea 1: Founding Members -->
+    <div class="separator-section">
+        <div class="separator-ornament">⚜ 👑 ⚜</div>
+        <h2>Founding Members</h2>
+        <div class="gold-divider"></div>
+    </div>
+
+    <section class="founders-display-section">
+        <div class="founder-poster-card"><img src="fondator1.jpg" alt="Grigore Magda"></div>
+        <div class="founder-poster-card"><img src="fondator2.jpg" alt="Calin Anghel"></div>
+    </section>
+
+    <!-- Secțiunea 2: Executive Board -->
+    <div class="separator-section">
+        <div class="separator-ornament">⚜ 💼 ⚜</div>
+        <h2>Executive Board</h2>
+        <div class="gold-divider"></div>
+    </div>
+
+    <!-- Cele 9 postere mari afișate fluid, câte 3 pe linie -->
+    <section class="executive-display-section">
+        <div class="executive-poster-card"><img src="board1.jpg" alt="Executive Member 1"></div>
+        <div class="executive-poster-card"><img src="board2.jpg" alt="Executive Member 2"></div>
+        <div class="executive-poster-card"><img src="board3.jpg" alt="Executive Member 3"></div>
+        <div class="executive-poster-card"><img src="board4.jpg" alt="Executive Member 4"></div>
+        <div class="executive-poster-card"><img src="board5.jpg" alt="Executive Member 5"></div>
+        <div class="executive-poster-card"><img src="board6.jpg" alt="Executive Member 6"></div>
+        <div class="executive-poster-card"><img src="board7.jpg" alt="Executive Member 7"></div>
+        <div class="executive-poster-card"><img src="board8.jpg" alt="Executive Member 8"></div>
+        <div class="executive-poster-card"><img src="board9.jpg" alt="Executive Member 9"></div>
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+
